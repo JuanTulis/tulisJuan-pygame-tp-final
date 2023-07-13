@@ -6,7 +6,6 @@ from entities import *
 from stages import *
 from projectiles import *
 from items import *
-from auxiliar import draw_text, draw_bg
 from menus import *
 
 pygame.init()
