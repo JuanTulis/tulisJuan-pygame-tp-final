@@ -67,10 +67,9 @@ class World():
                     elif tile > 2 and tile < 14:
                         self.tile_decoration.append(values)
                     elif tile > 13 and tile < 16:
-                        finish_tile = Exit(values[0], x * 32, y *32)
-                        finish_tile_group.add(finish_tile)
+                        self.tile_end.append(values)
                     elif tile == 16:
-                        player = Entity('mewtwo', x * TILE_SIZE, (y + 1) * TILE_SIZE + TOP_BORDER, 2, 2, 100)
+                        player = Entity('mewtwo', x * TILE_SIZE, (y + 1) * TILE_SIZE + TOP_BORDER, 2, 3, 50)
                     elif tile > 16:
                         if tile == 17:
                             enemy = Entity('novice_male', x * TILE_SIZE, (y + 1) * TILE_SIZE + TOP_BORDER, 2, 1, 10)
@@ -88,7 +87,7 @@ class World():
                             enemy = Entity('giovanni', x * TILE_SIZE, (y + 1) * TILE_SIZE + TOP_BORDER, 2, 1, 50)
                         enemy_group.add(enemy)
                     
-        return player, enemy_group, finish_tile_group
+        return player, enemy_group
         
     def draw(self, screen, screen_scroll):
         for tile in self.tile_ground:
@@ -100,6 +99,8 @@ class World():
             tile[1][0] += screen_scroll
             screen.blit(tile[0], tile[1])
         
+        for tile in self.tile_end:
+            tile[1][0] += screen_scroll
+            screen.blit(tile[0], tile[1])        
+        
 enemy_group = pygame.sprite.Group()
-
-finish_tile_group = pygame.sprite.Group()

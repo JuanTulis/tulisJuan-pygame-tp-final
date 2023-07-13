@@ -31,7 +31,7 @@ class Entity(pygame.sprite.Sprite):
         self.speed_y = 0
         self.shoot_cooldown = 0
         self.health = health
-        self.max_healt = self.health
+        self.max_health = self.health
         
         # Declara la derecha como la posición inicial
         self.direction = 1

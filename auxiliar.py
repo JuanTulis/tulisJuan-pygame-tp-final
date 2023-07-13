@@ -19,7 +19,7 @@ def draw_bg(surface):
     surface.fill((0, 0, 120))
 
 def draw_text(text, text_col, x, y, screen):
-    font = pygame.font.SysFont('Arial', 30)
+    font = pygame.font.SysFont('Arial', 20)
     img = font.render(text, True, text_col)
     screen.blit(img, (x, y))
 
